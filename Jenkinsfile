@@ -18,7 +18,7 @@ echo Hello Build!'''
           bat 'echo Hello Test!'
         }
         
-        input 'Verify'
+        input(message: 'Verify', submitter: 'jhli', submitterParameter: 'name')
       }
     }
     stage('Deploy') {
