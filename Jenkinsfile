@@ -7,6 +7,7 @@ pipeline {
 set -e
 set -x
 echo Hello Build!'''
+        isUnix()
       }
     }
     stage('Test') {
