@@ -12,7 +12,10 @@ echo Hello Build!'''
     }
     stage('Test') {
       steps {
-        bat 'echo \'Hello Test!\''
+        sh '''#!/bin/bash
+set -e
+set -x
+echo Hello Test!'''
       }
     }
     stage('Deploy') {
