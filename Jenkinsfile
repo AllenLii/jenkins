@@ -22,10 +22,13 @@ echo Hello Build!'''
     }
     stage('Deploy') {
       steps {
-        sh '''#!/bin/bash
+        node(label: '1404') {
+          sh '''#!/bin/bash
 set -e
 set -x
 echo Hello Deploy!'''
+        }
+        
       }
     }
   }
