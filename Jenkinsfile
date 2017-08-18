@@ -18,6 +18,7 @@ echo Hello Build!'''
           bat 'echo Hello Test!'
         }
         
+        input 'Verify'
       }
     }
     stage('Deploy') {
