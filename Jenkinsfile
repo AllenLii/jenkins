@@ -3,16 +3,21 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        isUnix()
-        sh '''#!/bin/bash
+        node(label: '1404') {
+          sh '''#!/bin/bash
 set -e
 set -x
 echo Hello Build!'''
+        }
+        
       }
     }
     stage('Test') {
       steps {
-        bat 'echo Hello Test!'
+        node(label: 'master') {
+          bat 'echo Hello Test!'
+        }
+        
       }
     }
     stage('Deploy') {
