@@ -3,11 +3,11 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        isUnix()
         sh '''#!/bin/bash
 set -e
 set -x
 echo Hello Build!'''
-        isUnix()
       }
     }
     stage('Test') {
